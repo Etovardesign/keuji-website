@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keuji — Your Firm's Unfair Advantage</title>
+  <meta name="description" content="Keuji partners with accounting firms to build AI-native ecosystems, embedding the tools and automation they need to land clients faster, keep them longer, and outperform the competition." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Ambient Glow Layer (mouse-tracked) ── -->
+  <div class="glow-layer" aria-hidden="true">
+    <div class="glow-orb glow-orb--cursor" id="glow-cursor"></div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ══════════════════════════════════════
+         NAV
+    ══════════════════════════════════════ -->
+    <nav class="nav" id="nav">
+      <a href="#" class="nav__logo">keuji</a>
+      <button class="btn btn--ghost">Join Waitlist</button>
+    </nav>
+
+    <!-- ══════════════════════════════════════
+         1. HERO
+    ══════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <span class="eyebrow eyebrow--grey hero__eyebrow">Your Firm's Unfair Advantage</span>
+
+        <h1 class="h1 hero__h1">
+          Grow Faster. Retain More.
+          <span class="hero__h1-line2">Outcompete Everyone.</span>
+        </h1>
+
+        <p class="body-large hero__body">
+          Keuji partners with accounting firms to build AI-native ecosystems,
+          embedding the tools and automation they need to land clients faster,
+          keep them longer, and outperform the competition.
+        </p>
+
+        <div class="hero__cta">
+          <button class="btn btn--primary">See How It Works</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         2. PRODUCT (Taggr by Keuji)
+    ══════════════════════════════════════ -->
+    <section class="product" id="product">
+      <div class="container">
+
+        <div class="product__header">
+          <div class="product__left reveal">
+            <div class="product__eyebrow-row">
+              <span class="eyebrow eyebrow--grey">Taggr by</span>
+              <div class="product__eyebrow-arrow">
+                <span class="arrow-line">
+                  <svg width="32" height="10" viewBox="0 0 32 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <line x1="0" y1="5" x2="26" y2="5" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                    <path d="M26 2L30 5L26 8" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
+                  </svg>
+                </span>
+                <span class="product__eyebrow-keuji">keuji</span>
+              </div>
+            </div>
+
+            <h2 class="h2 product__h2">
+              AI Transaction Classification<br>
+              <em>with flexible integration.</em>
+            </h2>
+          </div>
+
+          <div class="product__right reveal reveal-d2">
+            <p class="body-large">
+              Taggr is built for accounting firms who want to integrate
+              QuickBooks Online — with Xero, Sage, and FreshBooks
+              coming soon.
+            </p>
+          </div>
+        </div>
+
+        <div class="product__screenshot">
+          <img
+            src="assets/keiji-product-ui.png"
+            alt="Taggr — AI Transaction Classification dashboard showing review queue, confidence scores, and client management"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         3. FEATURES (Accounting Tech)
+    ══════════════════════════════════════ -->
+    <section class="features" id="features">
+      <div class="container">
+
+        <div class="features__header">
+          <span class="eyebrow features__eyebrow reveal">AI-Native</span>
+          <h2 class="h2 features__h2 reveal reveal-d1">Accounting Tech</h2>
+        </div>
+
+        <div class="features__grid">
+
+          <!-- Row 1 -->
+          <div class="feature-card reveal reveal-d1">
+            <div class="feature-card__icon">
+              <!-- Auto Classification icon: two overlapping squares -->
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="0" y="8" width="20" height="20" rx="2"/>
+                <rect x="12" y="0" width="20" height="20" rx="2" fill-opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="feature-card__title">Auto Classification</div>
+            <p class="feature-card__body">Classify hundreds of transactions in seconds with AI that adapts to your firm's specific categorization logic.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-d2">
+            <div class="feature-card__icon">
+              <!-- Deep integrations: bowtie/hourglass shape -->
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 0 L16 16 L32 0 Z"/>
+                <path d="M0 32 L16 16 L32 32 Z"/>
+              </svg>
+            </div>
+            <div class="feature-card__title">Deep Integrations</div>
+            <p class="feature-card__body">Connect your accounting software data for accurate classification that syncs categories back in real time.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-d3">
+            <div class="feature-card__icon">
+              <!-- Learns logic: speech bubble -->
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M28 0H4C1.8 0 0 1.8 0 4v18c0 2.2 1.8 4 4 4h6l4 6 4-6h10c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4z"/>
+              </svg>
+            </div>
+            <div class="feature-card__title">Learns your Firm's Logic</div>
+            <p class="feature-card__body">We study your accounts, vendor patterns, and past decisions for smarter transaction processing.</p>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="feature-card reveal reveal-d1">
+            <div class="feature-card__icon">
+              <!-- Confidence scoring: sparkle / asterisk star -->
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="16" y1="0" x2="16" y2="32" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <line x1="0" y1="16" x2="32" y2="16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <line x1="4" y1="4" x2="28" y2="28" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <line x1="28" y1="4" x2="4" y2="28" stroke="white" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="feature-card__title">Confidence Scoring</div>
+            <p class="feature-card__body">All classifications are shipped with confidence scores, so you know where human review is needed.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-d2">
+            <div class="feature-card__icon">
+              <!-- Multi-client dashboard: plus/cross -->
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="16" y1="0" x2="16" y2="32" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                <line x1="0" y1="16" x2="32" y2="16" stroke="white" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="feature-card__title">Multi-Client Dashboard</div>
+            <p class="feature-card__body">Track statuses, flag exceptions, and monitor every client's books from a single unified dashboard.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-d3">
+            <div class="feature-card__icon feature-card__icon--lg">
+              <!-- Built for growing firms: sprout/leaf -->
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M16 28V14M16 28c-2-4-8-8-8-14a8 8 0 0116 0c0 6-6 10-8 14z"/>
+                <circle cx="16" cy="14" r="4"/>
+                <path d="M8 14c0-4.4 3.6-8 8-8"/>
+              </svg>
+            </div>
+            <div class="feature-card__title">Built for Growing Firms</div>
+            <p class="feature-card__body">Our solutions are built to your firm's exact workflows and processes, not the other way around.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         4. PARTNERSHIP (Interested?)
+    ══════════════════════════════════════ -->
+    <section class="partnership" id="partnership">
+      <div class="container">
+        <span class="eyebrow partnership__eyebrow reveal">Interested?</span>
+        <h2 class="h2 partnership__h2 reveal reveal-d1">
+          We're selectively partnering<br>
+          with accounting firms<br>
+          <em>ready to build their edge.</em>
+        </h2>
+        <div class="reveal reveal-d2">
+          <button class="btn btn--ghost">Request Beta Access</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         5. STATS (Numbers Don't Lie)
+    ══════════════════════════════════════ -->
+    <section class="stats" id="stats">
+      <div class="container">
+        <h2 class="h2 stats__h2 reveal">The Numbers <em>Don't Lie...</em></h2>
+
+        <div class="stats__grid">
+
+          <div class="stat-item reveal reveal-d1">
+            <span class="stat-item__number" data-count-prefix="&lt;" data-count-target="10" data-count-suffix="mins">
+              &lt;10<span style="font-size:0.5em">mins</span>
+            </span>
+            <div class="stat-item__label">To Process Transactions</div>
+            <p class="stat-item__body">Upload, classify, and review. Done in under ten minutes, start to finish.</p>
+          </div>
+
+          <div class="stat-item reveal reveal-d2">
+            <span class="stat-item__number" data-count-target="90" data-count-suffix="%">
+              90%
+            </span>
+            <div class="stat-item__label">Less Time on Categorization</div>
+            <p class="stat-item__body">Auto-classify the routine. Redirect team focus to where real judgment matters.</p>
+          </div>
+
+          <div class="stat-item reveal reveal-d3">
+            <span class="stat-item__number" data-count-target="100" data-count-suffix="%">
+              100%
+            </span>
+            <div class="stat-item__label">Private by Design</div>
+            <p class="stat-item__body">Transactions never touch a public LLM. Client data stays completely private.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         6. BANNER / AI CLASSIFICATION
+    ══════════════════════════════════════ -->
+    <div class="banner-section">
+      <div class="banner-card" id="banner-card">
+
+        <div class="banner-card__bg" id="banner-bg"></div>
+
+        <div class="banner-card__content">
+          <div class="banner-card__text reveal">
+            <span class="eyebrow banner-card__eyebrow">AI Automation</span>
+            <h2 class="h2 banner-card__h2">
+              Transaction<br>
+              <em>Auto-Classification</em>
+            </h2>
+            <p class="banner-card__body">
+              Taggr, our flagship product, automatically categorizes every transaction by type, class, and account, eliminating manual work and giving every client a faster, cleaner close.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         7. CAPABILITIES
+    ══════════════════════════════════════ -->
+    <section class="capabilities" id="capabilities">
+      <div class="container">
+
+        <div class="capabilities__header">
+          <div class="capabilities__left reveal">
+            <span class="eyebrow capabilities__eyebrow">Our Capabilities</span>
+            <h2 class="h2 capabilities__h2">
+              AI for <em>Modern Accounting</em>
+            </h2>
+          </div>
+          <div class="capabilities__right reveal reveal-d2">
+            <p class="body-large">
+              Taggr is our foundation. Beyond it, our technical team is
+              equipped to design and deploy each of the following
+              capabilities, fully customized to your specific needs.
+            </p>
+          </div>
+        </div>
+
+        <div class="capabilities__table">
+
+          <div class="cap-row reveal">
+            <div class="cap-item">
+              <div class="cap-item__title">Book Reconciliation Assistance</div>
+              <p class="cap-item__body">Build automated workflows, cutting month-end close from days to hours.</p>
+              <span class="tag">Accounting</span>
+            </div>
+            <div class="cap-item">
+              <div class="cap-item__title">CPA / IRS Compliance Flagging</div>
+              <p class="cap-item__body">Flag potential issues before they become problems, keep client books audit-ready.</p>
+              <span class="tag">Compliance</span>
+            </div>
+            <div class="cap-item">
+              <div class="cap-item__title">Vendor / Real-Time Automation</div>
+              <p class="cap-item__body">Track and trigger real-time alerts so your team always has full, up-to-date visibility.</p>
+              <span class="tag">Workflow</span>
+            </div>
+          </div>
+
+          <div class="cap-row reveal reveal-d1">
+            <div class="cap-item">
+              <div class="cap-item__title">Easy Onboarding</div>
+              <p class="cap-item__body">Get your clients connected and operational quickly, with zero friction.</p>
+              <span class="tag">Workflow</span>
+            </div>
+            <div class="cap-item">
+              <div class="cap-item__title">Docs Analysis &amp; Abstraction</div>
+              <p class="cap-item__body">Eliminate data entry by extracting and structuring it from any document format.</p>
+              <span class="tag">Bookkeeping</span>
+            </div>
+            <div class="cap-item">
+              <div class="cap-item__title">Tax Prep / Data Packaging</div>
+              <p class="cap-item__body">Compile and organize year-end data automatically so you're always prepared.</p>
+              <span class="tag">Taxes</span>
+            </div>
+          </div>
+
+          <div class="cap-row cap-row--partial reveal reveal-d2">
+            <div class="cap-item">
+              <div class="cap-item__title">AR / AP Automation</div>
+              <p class="cap-item__body">Trigger automated follow-ups on balances, payments, and receivables.</p>
+              <span class="tag">Finance</span>
+            </div>
+            <div class="cap-item">
+              <div class="cap-item__title">Financial Report Generation</div>
+              <p class="cap-item__body">Auto-generate financial reports using real-time data &amp; share them on demand.</p>
+              <span class="tag">Finance</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         8. WE SERVE (Humans Behind the Numbers)
+    ══════════════════════════════════════ -->
+    <section class="we-serve" id="we-serve">
+      <div class="container">
+        <div class="we-serve__inner">
+
+          <div class="we-serve__left reveal">
+            <span class="eyebrow we-serve__eyebrow">We Serve</span>
+            <h2 class="h2 we-serve__h2">
+              The Humans<br>
+              <em>Behind The Numbers</em>
+            </h2>
+            <p class="body-large" style="margin-top:16px">
+              Taggr is part of Keuji's SaaS product suite, built for accounting professionals of all sizes.
+            </p>
+          </div>
+
+          <div class="we-serve__right">
+
+            <div class="serve-item reveal reveal-d1">
+              <div class="serve-item__header">
+                <span class="serve-item__icon" aria-hidden="true">
+                  <!-- person/profile icon -->
+                  <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14" cy="8" r="5"/>
+                    <path d="M2 24c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
+                  </svg>
+                </span>
+                <div class="serve-item__title">Accounting Firms</div>
+              </div>
+              <p class="serve-item__body">
+                Whether you're managing 10 clients or 500, we help embed AI Automation across every workflow so you grow without growing your headcount.
+              </p>
+              <div class="serve-item__tags">
+                <span class="tag">Transaction Classification</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Client Onboarding</span>
+              </div>
+            </div>
+
+            <div class="serve-item reveal reveal-d2">
+              <div class="serve-item__header">
+                <span class="serve-item__icon" aria-hidden="true">
+                  <!-- bookkeeper/shield icon -->
+                  <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2L4 6v8c0 6 4.4 10.8 10 12 5.6-1.2 10-6 10-12V6L14 2z"/>
+                  </svg>
+                </span>
+                <div class="serve-item__title">Bookkeepers &amp; Sole Practitioners</div>
+              </div>
+              <p class="serve-item__body">
+                You're the engine behind your clients' finances. We give you the tools and expertise to move faster, catch more, and scale with confidence.
+              </p>
+              <div class="serve-item__tags">
+                <span class="tag">QBO Integration</span>
+                <span class="tag">Bank Feed Automation</span>
+                <span class="tag">Scale Operations</span>
+              </div>
+            </div>
+
+            <div class="serve-item reveal reveal-d3">
+              <div class="serve-item__header">
+                <span class="serve-item__icon" aria-hidden="true">
+                  <!-- fintech/stacked layers icon -->
+                  <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="14" cy="6" rx="10" ry="4"/>
+                    <path d="M4 6v5c0 2.2 4.5 4 10 4s10-1.8 10-4V6"/>
+                    <path d="M4 11v6c0 2.2 4.5 4 10 4s10-1.8 10-4v-6"/>
+                    <path d="M4 17v5c0 2.2 4.5 4 10 4s10-1.8 10-4v-5"/>
+                  </svg>
+                </span>
+                <div class="serve-item__title">Fintech Startups &amp; Enterprise</div>
+              </div>
+              <p class="serve-item__body">
+                We partner with ambitious growth-stage firms to design the AI infrastructure they need to compete at the next level.
+              </p>
+              <div class="serve-item__tags">
+                <span class="tag">MVP Development</span>
+                <span class="tag">API Integrations</span>
+                <span class="tag">Compliance Engineering</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         9. FINAL CTA (Let's Build)
+    ══════════════════════════════════════ -->
+    <section class="final-cta" id="final-cta">
+      <div class="container">
+        <span class="eyebrow final-cta__eyebrow reveal">Let's Build</span>
+        <h2 class="h2 final-cta__h2 reveal reveal-d1">
+          Ready to Become an<br>
+          <em>AI-Native Firm?</em>
+        </h2>
+        <div class="final-cta__cta reveal reveal-d2">
+          <button class="btn btn--ghost">Request Beta Access</button>
+        </div>
+      </div>
+      <div class="final-cta__watermark" aria-hidden="true">keuji</div>
+    </section>
+
+  </div><!-- /.page-wrapper -->
+
+  <script src="main.js"></script>
+</body>
+</html>
