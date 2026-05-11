@@ -528,25 +528,8 @@ h2, .h2 {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  isolation: isolate;
   --gx: 50%;
   --gy: 50%;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: url('assets/hover-bg.png') center / cover no-repeat;
-  opacity: 0;
-  transition: opacity 400ms ease;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.feature-card:hover::before {
-  opacity: 1;
 }
 
 .feature-card::after {
