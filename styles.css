@@ -83,7 +83,7 @@
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; background: #0D0D0D; }
 
 body {
   background: linear-gradient(to bottom, #000000, #0D0D0D);
