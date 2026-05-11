@@ -484,6 +484,12 @@ h2, .h2 {
   display: block;
 }
 
+/* Mobile screenshot hidden by default; swapped in via media query */
+.product__screenshot--mobile { display: none; }
+
+/* "Retain More." stays inline on desktop */
+.hero__h1-retain { display: inline; }
+
 /* ============================================================
    FEATURES (Accounting Tech)
    ============================================================ */
@@ -1053,6 +1059,9 @@ h2, .h2 {
   h2, .h2 { font-size: 40px; line-height: 1.15; }
   .stat-item__number { font-size: 56px; }
 
+  /* ── Nav button — smaller horizontal padding ── */
+  .nav .btn { padding-left: 12px; padding-right: 12px; }
+
   /* ── Hero ── */
   .hero {
     padding-top: calc(var(--nav-h) + 80px);
@@ -1062,7 +1071,13 @@ h2, .h2 {
   .hero__body { font-size: 16px; }
   .hero__inner { max-width: 100%; }
 
+  /* "Retain More." breaks onto its own line on mobile */
+  .hero__h1-retain { display: block; }
+
   /* ── Product ── */
+  .product__screenshot--mobile { display: block; }
+  .product__screenshot--desktop { display: none; }
+
   .product__header {
     flex-direction: column;
     align-items: flex-start;
@@ -1096,6 +1111,7 @@ h2, .h2 {
   }
   .banner-card__bg {
     inset: 0;
+    background-image: url('assets/hover-bg.png');
     background-size: cover;
     transform: none !important; /* disable JS parallax on mobile */
   }
@@ -1179,8 +1195,12 @@ h2, .h2 {
   /* ── Feature cards — tighter inner padding ── */
   .feature-card { padding: var(--sp-32) var(--sp-24); }
 
-  /* ── Buttons — full-width within container ── */
-  .btn { width: 100%; }
+  /* ── Buttons — full-width only for primary CTAs, not nav or inline ── */
+  .hero__cta .btn,
+  .final-cta .btn { width: 100%; }
+
+  /* ── Nav button — compact horizontal padding ── */
+  .nav .btn { width: auto; padding-left: 12px; padding-right: 12px; }
 
   /* ── Partnership ── */
   .partnership__h2 { font-size: 32px; }
