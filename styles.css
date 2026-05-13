@@ -213,7 +213,7 @@ h2, .h2 {
   background: rgba(255,255,255,0.07);
   color: var(--color-white);
   font-family: var(--font-action);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
   white-space: nowrap;
@@ -418,18 +418,11 @@ h2, .h2 {
   border-bottom: 1px solid rgba(255,255,255,0.07);
   transition: color 200ms ease;
 }
-.nav__mobile-link:last-child { border-bottom: none; padding-bottom: 0; }
 .nav__mobile-link:hover { color: white; }
 
-.nav__mobile-cta {
+/* 'Start Project' btn inside mobile menu */
+.nav__mobile-menu .btn {
   margin-top: 16px;
-  padding: 14px 24px;
-  border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 10px;
-  background: rgba(255,255,255,0.07);
-  text-align: center;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 
 /* ============================================================
