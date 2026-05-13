@@ -19,11 +19,11 @@
   grid-template-columns: 1fr 1fr;
   align-items: flex-end;
   gap: var(--sp-80);
-  padding: 0 var(--content-px) var(--sp-64);
+  padding: 0 160px var(--sp-64);
 }
 
 .hp-hero__h1 {
-  font-size: 88px;
+  font-size: 68px;
   line-height: 1.0;
   margin-top: var(--sp-24);
 }
@@ -36,8 +36,7 @@
 }
 
 .hp-hero__logos {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding: 24px var(--content-px);
+  padding: 24px 160px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,8 +46,8 @@
 
 .hp-hero__logos-label {
   font-family: var(--font-eyebrow);
-  font-size: 10px;
-  letter-spacing: 0.12em;
+  font-size: 16px;
+  letter-spacing: 0.08em;
   color: rgba(255,255,255,0.35);
   white-space: nowrap;
 }
@@ -84,7 +83,8 @@
 
 .hp-stats__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 320px);
+  justify-content: center;
   gap: var(--sp-40);
   text-align: center;
 }
@@ -100,7 +100,7 @@
 
 .hp-stat__label {
   font-family: var(--font-action);
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.03em;
   margin-bottom: 12px;
@@ -108,10 +108,9 @@
 
 .hp-stat__body {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255,255,255,0.5);
   line-height: 1.6;
-  max-width: 240px;
   margin: 0 auto;
 }
 
@@ -158,6 +157,7 @@
   border: none;
   border-radius: 0;
   padding: var(--sp-32) 0;
+  max-width: 480px;
 }
 
 .hp-icp__icon {
@@ -270,7 +270,7 @@
 
 .hp-gtm__card-body {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 16px;
   color: rgba(255,255,255,0.5);
   line-height: 1.65;
   flex: 1;
@@ -323,21 +323,40 @@
   line-height: 1.6;
 }
 
-/* 2×2 grid */
+/* 3-column grid: left 1/3 tall + right 2/3 with 2 stacked cards */
 .hp-tech__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 360px 300px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 300px 300px;
   gap: 12px;
 }
 
-/* Top-left: image only */
+/* Left 1/3: tall image card spanning both rows */
 .hp-tech__img-card {
   border-radius: 16px;
   overflow: hidden;
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / 3;
 }
 .hp-tech__img-card img {
   width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.hp-tech__img-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-40);
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 55%, transparent 100%);
+  z-index: 2;
+}
+.hp-tech__img-card-content .hp-tech__card-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+}
+.hp-tech__img-card-content .hp-tech__card-title {
+  font-size: 36px;
 }
 
 /* Shared card base */
@@ -363,10 +382,12 @@
 .hp-tech__card:hover { border-color: rgba(153,174,239,0.2); }
 .hp-tech__card:hover::after { opacity: 1; }
 
-/* Top-right: Agentic AI — text left, image right */
+/* Top-right: Agentic AI — spans col 2-3, row 1 */
 .hp-tech__card--agentic {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  grid-column: 2 / 4;
+  grid-row: 1;
 }
 .hp-tech__card--agentic .hp-tech__card-text {
   flex: 1;
@@ -377,36 +398,18 @@
   position: relative;
   z-index: 1;
 }
-.hp-tech__card--agentic .hp-tech__card-img-wrap {
-  flex: 0 0 42%;
-  overflow: hidden;
-}
-.hp-tech__card--agentic .hp-tech__card-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover;
-}
 
-/* Bottom-left: MCP — text top */
+/* MCP — hidden in 3-column layout */
 .hp-tech__card--mcp {
-  display: flex;
-  flex-direction: column;
-}
-.hp-tech__card--mcp .hp-tech__card-text {
-  padding: var(--sp-40);
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
-/* Bottom-right: Voice AI — image left, text right */
+/* Bottom-right: Voice AI — spans col 2-3, row 2 */
 .hp-tech__card--voice {
   display: flex;
-  flex-direction: row;
-}
-.hp-tech__card--voice .hp-tech__card-img-wrap {
-  flex: 0 0 42%;
-  overflow: hidden;
-}
-.hp-tech__card--voice .hp-tech__card-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover;
+  flex-direction: column;
+  grid-column: 2 / 4;
+  grid-row: 2;
 }
 .hp-tech__card--voice .hp-tech__card-text {
   flex: 1;
@@ -421,8 +424,8 @@
 /* Card content shared */
 .hp-tech__card-eyebrow {
   font-family: var(--font-eyebrow);
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 16px;
+  letter-spacing: 0.06em;
   color: rgba(255,255,255,0.4);
   margin-bottom: 16px;
   display: block;
@@ -504,7 +507,7 @@
 
 .hp-expertise__body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255,255,255,0.55);
   line-height: 1.7;
 }
@@ -564,14 +567,14 @@
 
 .hp-process__step-title {
   font-family: var(--font-action);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .hp-process__step-body {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255,255,255,0.5);
   line-height: 1.65;
 }
@@ -591,7 +594,8 @@
 .hp-why__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 32px;
+  max-width: 1120px;
 }
 
 .hp-why__card {
@@ -612,12 +616,13 @@
 .hp-why__card-icon svg {
   width: 28px;
   height: 28px;
-  fill: var(--color-blue);
+  fill: white;
+  stroke: white;
 }
 
 .hp-why__card-title {
   font-family: var(--font-action);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.35;
   color: white;
@@ -625,7 +630,7 @@
 
 .hp-why__card-body {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255,255,255,0.5);
   line-height: 1.65;
 }
@@ -668,10 +673,9 @@
 
 .hp-contact__watermark {
   position: absolute;
-  bottom: -2%;
-  left: 0;
-  right: 0;
-  text-align: center;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-serif);
   font-size: 690px;
   font-style: italic;
@@ -681,7 +685,6 @@
   pointer-events: none;
   user-select: none;
   line-height: 1;
-  overflow: hidden;
 }
 
 
@@ -690,8 +693,15 @@
 ══════════════════════════════════════ */
 
 @media (max-width: 991px) {
-  .hp-hero__h1 { font-size: 72px; }
-  .hp-hero__main { gap: var(--sp-48); }
+  /* Hero — single column at large tablet, explicit 24px padding */
+  .hp-hero__main {
+    grid-template-columns: 1fr;
+    gap: var(--sp-32);
+    padding: 0 24px var(--sp-48);
+  }
+  .hp-hero__logos { padding: 24px 24px 80px; }
+  .hp-hero__h1 { font-size: 60px; }
+  .hp-hero__body { max-width: 560px; }
 
   .hp-stats__grid { gap: var(--sp-32); }
   .hp-stat__number { font-size: 72px; }
@@ -705,82 +715,87 @@
 
   .hp-process__h2 { font-size: 44px; }
 
-  .hp-tech__grid { grid-template-rows: 300px 260px; }
+  .hp-tech__grid { grid-template-rows: 240px 240px; }
   .hp-tech__card-title { font-size: 34px; }
 
+  /* Why Keuji — 2 columns at large tablet */
+  .hp-why__grid { grid-template-columns: repeat(2, 1fr); }
+
   .hp-contact__h2 { font-size: 56px; }
-  .hp-contact__watermark { font-size: 280px; }
+  .hp-contact__watermark { font-size: 400px; }
 }
 
 @media (max-width: 767px) {
+  /* Hero */
   .hp-hero__main {
     grid-template-columns: 1fr;
     gap: var(--sp-32);
-    padding-bottom: var(--sp-48);
+    padding: 0 24px var(--sp-48);
   }
-
-  .hp-hero__h1 { font-size: 56px; }
+  .hp-hero__logos { padding: 24px 24px 64px; gap: 24px; flex-direction: column; align-items: flex-start; }
+  .hp-logos-row { gap: 24px; }
+  .hp-hero__h1 { font-size: 48px; }
   .hp-hero__body { max-width: 100%; }
 
-  .hp-hero__logos {
-    gap: 24px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hp-logos-row { gap: 24px; }
-
+  /* Stats */
   .hp-stats__grid { grid-template-columns: 1fr; text-align: left; }
   .hp-stat__number { font-size: 64px; }
-  .hp-stat__body { margin: 0; max-width: 100%; }
+  .hp-stat__body { margin: 0; }
 
+  /* Approach */
   .hp-approach__header { grid-template-columns: 1fr; gap: var(--sp-32); }
-  .hp-approach__h2 { font-size: 44px; }
+  .hp-approach__h2 { font-size: 40px; }
 
+  /* ICP */
   .hp-icp__grid { grid-template-columns: 1fr; }
 
+  /* GTM */
   .hp-gtm__grid { grid-template-columns: 1fr; }
-  .hp-gtm__h2 { font-size: 44px; }
+  .hp-gtm__h2 { font-size: 40px; }
 
-  .hp-enterprise__h2 { font-size: 44px; }
+  .hp-enterprise__h2 { font-size: 40px; }
 
-  .hp-tech__grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
+  /* Tech */
+  .hp-tech__grid { grid-template-columns: 1fr; grid-template-rows: auto; }
   .hp-tech__img-card { display: none; }
-  .hp-tech__card--agentic,
-  .hp-tech__card--voice { flex-direction: column; }
-  .hp-tech__card--agentic .hp-tech__card-img-wrap,
-  .hp-tech__card--voice .hp-tech__card-img-wrap { flex: 0 0 200px; width: 100%; }
+  .hp-tech__card--mcp { display: flex; flex-direction: column; }
+  .hp-tech__card--mcp .hp-tech__card-text { padding: var(--sp-40); position: relative; z-index: 1; }
   .hp-tech__card-title { font-size: 32px; }
-  .hp-tech__h2 { font-size: 44px; }
+  .hp-tech__h2 { font-size: 40px; }
 
+  /* Right Expertise */
   .hp-expertise__inner { grid-template-columns: 1fr; }
-  .hp-expertise__h2 { font-size: 44px; }
+  .hp-expertise__h2 { font-size: 40px; }
 
+  /* Process */
   .hp-process__inner { grid-template-columns: 1fr; }
   .hp-process__left { position: static; margin-bottom: var(--sp-48); }
-  .hp-process__h2 { font-size: 40px; }
+  .hp-process__h2 { font-size: 36px; }
 
+  /* Why Keuji */
   .hp-why__grid { grid-template-columns: 1fr; }
-  .hp-why__h2 { font-size: 44px; }
+  .hp-why__h2 { font-size: 40px; }
 
-  .hp-contact__h2 { font-size: 44px; }
+  /* Contact */
+  .hp-contact__h2 { font-size: 40px; }
   .hp-contact .btn { width: 100%; }
-  .hp-contact__watermark { font-size: 180px; }
+  .hp-contact__watermark { font-size: 220px; }
 }
 
 @media (max-width: 479px) {
-  .hp-hero__h1 { font-size: 44px; }
+  .hp-hero__main { padding: 0 16px var(--sp-48); }
+  .hp-hero__logos { padding: 20px 16px 56px; }
+  .hp-hero__h1 { font-size: 40px; }
   .hp-stat__number { font-size: 56px; }
   .hp-approach__h2,
   .hp-gtm__h2,
   .hp-enterprise__h2,
   .hp-expertise__h2,
   .hp-why__h2,
-  .hp-tech__h2 { font-size: 36px; }
-  .hp-process__h2 { font-size: 34px; }
-  .hp-contact__h2 { font-size: 36px; }
+  .hp-tech__h2 { font-size: 32px; }
+  .hp-process__h2 { font-size: 30px; }
+  .hp-contact__h2 { font-size: 32px; }
+  .hp-contact__watermark { font-size: 140px; }
 }
 
 @media (hover: none) {

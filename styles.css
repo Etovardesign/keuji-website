@@ -981,7 +981,7 @@ h2, .h2 {
 @media (max-width: 991px) {
   :root {
     --nav-px:     48px;
-    --content-px: 48px;
+    --content-px: 24px;
     --sp-160:     120px;
   }
 
