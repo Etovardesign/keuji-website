@@ -1179,17 +1179,15 @@ a.banner-card { cursor: pointer; }
   }
 
   /* ── Banner ── */
-  .banner-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(5,5,8,0.65);
-    z-index: 1;
-    pointer-events: none;
+  .banner-card__bg {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
   }
   .banner-card__content {
-    padding: var(--sp-48) var(--sp-32);
+    padding: var(--sp-40) var(--sp-32);
     justify-content: flex-start;
+    align-items: flex-end;
   }
   .banner-card__text {
     width: 100%;
