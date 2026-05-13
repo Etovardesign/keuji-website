@@ -354,12 +354,13 @@ h2, .h2 {
 .nav__actions {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 48px;
 }
 
 .nav__link {
-  font-family: var(--font-body);
-  font-size: 15px;
+  font-family: var(--font-action);
+  font-size: 18px;
+  font-weight: 500;
   color: rgba(255,255,255,0.65);
   text-decoration: none;
   letter-spacing: 0.01em;

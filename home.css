@@ -184,14 +184,14 @@
 
 .hp-icp__title {
   font-family: var(--font-action);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 12px;
 }
 
 .hp-icp__body {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255,255,255,0.55);
   line-height: 1.65;
 }
@@ -767,10 +767,14 @@
   .hp-enterprise__h2 { font-size: 40px; }
 
   /* Tech */
-  .hp-tech__grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .hp-tech__grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 12px; }
   .hp-tech__img-card { display: none; }
+  .hp-tech__card--agentic,
+  .hp-tech__card--voice { grid-column: auto; grid-row: auto; }
+  .hp-tech__card--agentic .hp-tech__card-text,
+  .hp-tech__card--voice .hp-tech__card-text { padding: var(--sp-32); }
   .hp-tech__card--mcp { display: flex; flex-direction: column; }
-  .hp-tech__card--mcp .hp-tech__card-text { padding: var(--sp-40); position: relative; z-index: 1; }
+  .hp-tech__card--mcp .hp-tech__card-text { padding: var(--sp-32); position: relative; z-index: 1; }
   .hp-tech__card-title { font-size: 32px; }
   .hp-tech__h2 { font-size: 40px; }
 
