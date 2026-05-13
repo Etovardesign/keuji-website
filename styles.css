@@ -784,7 +784,7 @@ h2, .h2 {
   position: absolute;
   inset: -15% 0;
   background-image: url('assets/keuji-banner.png');
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   will-change: transform;
 }
