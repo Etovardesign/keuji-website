@@ -368,6 +368,70 @@ h2, .h2 {
 }
 .nav__link:hover { color: white; }
 
+/* Hamburger button (mobile only) */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+}
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 300ms ease, opacity 200ms ease;
+}
+.nav__hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav__hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile dropdown menu */
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  z-index: 99;
+  flex-direction: column;
+  background: rgba(5,5,5,0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 4px var(--nav-px) 24px;
+}
+.nav__mobile-menu.is-open { display: flex; }
+
+.nav__mobile-link {
+  font-family: var(--font-action);
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: color 200ms ease;
+}
+.nav__mobile-link:last-child { border-bottom: none; padding-bottom: 0; }
+.nav__mobile-link:hover { color: white; }
+
+.nav__mobile-cta {
+  margin-top: 16px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.07);
+  text-align: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -1076,8 +1140,9 @@ h2, .h2 {
   h2, .h2 { font-size: 40px; line-height: 1.15; }
   .stat-item__number { font-size: 56px; }
 
-  /* ── Nav button — smaller horizontal padding ── */
-  .nav .btn { padding-left: 12px; padding-right: 12px; }
+  /* ── Nav — collapse to hamburger ── */
+  .nav__actions { display: none; }
+  .nav__hamburger { display: flex; }
 
   /* ── Hero ── */
   .hero {
@@ -1215,9 +1280,6 @@ h2, .h2 {
   /* ── Buttons — full-width only for primary CTAs, not nav or inline ── */
   .hero__cta .btn,
   .final-cta .btn { width: 100%; }
-
-  /* ── Nav button — compact horizontal padding ── */
-  .nav .btn { width: auto; padding-left: 12px; padding-right: 12px; }
 
   /* ── Partnership ── */
   .partnership__h2 { font-size: 32px; }

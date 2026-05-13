@@ -174,7 +174,39 @@
 })();
 
 
-/* ── 7. BUTTON GLOW — rainbow trail circles ── */
+/* ── 7. HAMBURGER MENU ── */
+(function initHamburger() {
+  const btn  = document.getElementById('nav-hamburger');
+  const menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+
+  function open() {
+    menu.classList.add('is-open');
+    btn.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+  function close() {
+    menu.classList.remove('is-open');
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.contains('is-open') ? close() : open();
+  });
+
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) close();
+  });
+})();
+
+
+/* ── 8. BUTTON GLOW — rainbow trail circles ── */
 (function initBtnGlow() {
   const THROTTLE_MS = 100;
   const FADE_OUT_MS = 1000;
