@@ -28,11 +28,18 @@
   margin-top: var(--sp-24);
 }
 
+.hp-hero__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 .hp-hero__body {
   font-size: 17px;
   line-height: 1.65;
   color: rgba(255,255,255,0.6);
   max-width: 440px;
+  margin-left: auto;
 }
 
 .hp-hero__logos {
@@ -55,7 +62,7 @@
 .hp-logos-row {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 56px;
   flex-wrap: wrap;
   margin-left: auto;
 }
@@ -69,7 +76,7 @@
 .hp-logo:hover { opacity: 0.85; }
 
 .hp-logo img {
-  height: 22px;
+  height: 26px;
   width: auto;
   filter: brightness(0) invert(1);
   object-fit: contain;
@@ -357,6 +364,10 @@
 }
 .hp-tech__img-card-content .hp-tech__card-title {
   font-size: 36px;
+  margin-bottom: 12px;
+}
+.hp-tech__img-card-content .hp-tech__card-body {
+  max-width: 280px;
 }
 
 /* Shared card base */
