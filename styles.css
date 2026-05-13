@@ -756,6 +756,7 @@ h2, .h2 {
   max-height: 480px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   --gx: 50%;
   --gy: 50%;
 }
@@ -782,11 +783,10 @@ h2, .h2 {
 
 .banner-card__bg {
   position: absolute;
-  inset: -15% 0;
+  inset: 0;
   background-image: url('assets/keuji-banner.png');
   background-size: cover;
   background-position: center;
-  will-change: transform;
 }
 
 .banner-card__content {
@@ -1185,10 +1185,7 @@ h2, .h2 {
     max-height: none;
   }
   .banner-card__bg {
-    inset: 0;
     background-image: url('assets/hover-bg.png');
-    background-size: cover;
-    transform: none !important; /* disable JS parallax on mobile */
   }
   .banner-card__content {
     padding: var(--sp-48) var(--sp-32);

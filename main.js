@@ -78,38 +78,6 @@
 })();
 
 
-/* ── 4. PARALLAX — banner background ── */
-(function initParallax() {
-  const bannerCard = document.getElementById('banner-card');
-  const bannerBg   = document.getElementById('banner-bg');
-
-  if (!bannerCard || !bannerBg) return;
-
-  let ticking = false;
-
-  function updateParallax() {
-    ticking = false;
-    const rect = bannerCard.getBoundingClientRect();
-    const viewH = window.innerHeight;
-
-    if (rect.bottom < -200 || rect.top > viewH + 200) return;
-
-    const progress = 1 - (rect.bottom / (viewH + rect.height));
-    const bgShift = progress * rect.height * 0.3;
-    bannerBg.style.transform = `translateY(${bgShift}px)`;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  updateParallax();
-})();
-
-
 /* ── 5. COUNT-UP STATS ── */
 (function initCountUp() {
   const statNumbers = document.querySelectorAll('.stat-item__number[data-count-target]');
