@@ -655,7 +655,7 @@
 .hp-contact {
   position: relative;
   overflow: hidden;
-  padding: var(--sp-160) var(--content-px);
+  padding: var(--sp-160) 0;
 }
 
 .hp-contact__inner {
@@ -665,8 +665,10 @@
   grid-template-columns: 1fr 1.6fr;
   gap: var(--sp-80);
   align-items: start;
+  width: 100%;
   max-width: var(--max-w-content);
   margin: 0 auto;
+  padding: 0 var(--content-px);
 }
 
 .hp-contact__left {
