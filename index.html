@@ -512,6 +512,10 @@
         <div class="hp-contact__right">
           <form class="hp-contact__form" id="contact-form" novalidate>
 
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New Project Inquiry — Keuji" />
+            <input type="hidden" name="from_name" value="Keuji Website" />
+
             <div class="hpf-row hpf-row--2col">
               <div class="hpf-field">
                 <label class="hpf-label" for="cf-first">First Name</label>
@@ -656,8 +660,28 @@
           return;
         }
 
-        var right = form.closest('.hp-contact__right');
-        right.innerHTML = '<div class="hp-contact__success"><p class="hp-contact__success-title">We\'ll be in touch.</p><p class="hp-contact__success-body">Thanks for reaching out — we\'ll respond within one business day.</p></div>';
+        var submitBtn = form.querySelector('[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.success) {
+            var right = form.closest('.hp-contact__right');
+            right.innerHTML = '<div class="hp-contact__success"><p class="hp-contact__success-title">We\'ll be in touch.</p><p class="hp-contact__success-body">Thanks for reaching out — we\'ll respond within one business day.</p></div>';
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit';
+          }
+        })
+        .catch(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+        });
       });
     })();
 
