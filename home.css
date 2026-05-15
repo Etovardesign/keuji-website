@@ -653,12 +653,6 @@
 
 /* ── CONTACT / FINAL CTA ── */
 .hp-contact {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   position: relative;
   overflow: hidden;
   padding: var(--sp-160) var(--content-px);
@@ -667,10 +661,21 @@
 .hp-contact__inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--sp-80);
+  align-items: start;
+  max-width: var(--max-w-content);
+  margin: 0 auto;
+}
+
+.hp-contact__left {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--sp-24);
+  position: sticky;
+  top: 120px;
 }
 
 .hp-contact__h2 {
@@ -683,7 +688,6 @@
   font-size: 16px;
   color: rgba(255,255,255,0.5);
   line-height: 1.6;
-  margin-bottom: var(--sp-16);
 }
 
 .hp-contact__watermark {
@@ -700,6 +704,129 @@
   pointer-events: none;
   user-select: none;
   line-height: 1;
+}
+
+/* ── CONTACT FORM ── */
+.hp-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hpf-row { /* plain block row */ }
+.hpf-row--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.hpf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hpf-label {
+  font-family: var(--font-action);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.04em;
+}
+
+.hpf-input,
+.hpf-select,
+.hpf-textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 16px;
+  width: 100%;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.hpf-input::placeholder,
+.hpf-textarea::placeholder { color: rgba(255,255,255,0.28); }
+
+.hpf-input:focus,
+.hpf-select:focus,
+.hpf-textarea:focus {
+  outline: none;
+  border-color: rgba(153,174,239,0.5);
+  background: rgba(255,255,255,0.07);
+}
+
+.hpf-select {
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+}
+.hpf-select:invalid { color: rgba(255,255,255,0.28); }
+.hpf-select option { background: #1a1a1a; color: white; }
+
+.hpf-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.hpf-radio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 32px;
+  padding: 6px 0;
+}
+
+.hpf-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  user-select: none;
+}
+
+.hpf-radio-label input[type="radio"] {
+  accent-color: var(--color-blue);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Error state */
+.hpf-error {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #ff6b6b;
+  display: none;
+}
+
+.hpf-field.is-error > .hpf-input,
+.hpf-field.is-error > .hpf-select,
+.hpf-field.is-error > .hpf-textarea { border-color: rgba(255,100,100,0.7); }
+.hpf-field.is-error .hpf-error { display: block; }
+
+/* Success state */
+.hp-contact__success { padding: var(--sp-64) 0; }
+
+.hp-contact__success-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-style: italic;
+  margin-bottom: var(--sp-16);
+}
+
+.hp-contact__success-body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
 }
 
 
@@ -736,8 +863,9 @@
   /* Why Keuji — 2 columns at large tablet */
   .hp-why__grid { grid-template-columns: repeat(2, 1fr); }
 
-  .hp-contact__h2 { font-size: 56px; }
+  .hp-contact__h2 { font-size: 48px; }
   .hp-contact__watermark { font-size: 400px; }
+  .hp-contact__inner { grid-template-columns: 1fr 1.4fr; gap: var(--sp-64); }
 }
 
 @media (max-width: 767px) {
@@ -799,7 +927,10 @@
 
   /* Contact */
   .hp-contact__h2 { font-size: 40px; }
-  .hp-contact .btn { width: 100%; }
+  .hp-contact__inner { grid-template-columns: 1fr; gap: var(--sp-48); }
+  .hp-contact__left { position: static; }
+  .hp-contact__left .btn { width: 100%; }
+  .hpf-row--2col { grid-template-columns: 1fr; }
   .hp-contact__watermark { font-size: 220px; }
 }
 
@@ -817,6 +948,7 @@
   .hp-process__h2 { font-size: 30px; }
   .hp-contact__h2 { font-size: 32px; }
   .hp-contact__watermark { font-size: 140px; }
+  .hpf-radio-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
 @media (hover: none) {

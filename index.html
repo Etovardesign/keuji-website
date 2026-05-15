@@ -501,10 +501,95 @@
     ══════════════════════════════════════ -->
     <section class="hp-contact" id="contact">
       <div class="hp-contact__inner reveal">
-        <span class="eyebrow eyebrow--grey">Let's Connect</span>
-        <h2 class="h2 hp-contact__h2">Get in Touch</h2>
-        <p class="hp-contact__body">We're here to answer your questions and support you.</p>
-        <a href="mailto:usman@keuji.com" class="btn btn--ghost">Email Us</a>
+
+        <div class="hp-contact__left">
+          <span class="eyebrow eyebrow--grey">Let's Connect</span>
+          <h2 class="h2 hp-contact__h2">Get in Touch</h2>
+          <p class="hp-contact__body">We're here to answer your questions and support you.</p>
+          <a href="mailto:usman@keuji.com" class="btn btn--ghost">Email Us</a>
+        </div>
+
+        <div class="hp-contact__right">
+          <form class="hp-contact__form" id="contact-form" novalidate>
+
+            <div class="hpf-row hpf-row--2col">
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-first">First Name</label>
+                <input class="hpf-input" type="text" id="cf-first" name="first_name" placeholder="Jane" required />
+                <span class="hpf-error">Please enter your first name.</span>
+              </div>
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-last">Last Name</label>
+                <input class="hpf-input" type="text" id="cf-last" name="last_name" placeholder="Doe" required />
+                <span class="hpf-error">Please enter your last name.</span>
+              </div>
+            </div>
+
+            <div class="hpf-row hpf-row--2col">
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-email">Email</label>
+                <input class="hpf-input" type="email" id="cf-email" name="email" placeholder="janedoe@acme.xyz" required />
+                <span class="hpf-error">Please enter a valid email.</span>
+              </div>
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-company">Company Name</label>
+                <input class="hpf-input" type="text" id="cf-company" name="company" placeholder="Acme &amp; Co." required />
+                <span class="hpf-error">Please enter your company name.</span>
+              </div>
+            </div>
+
+            <div class="hpf-row">
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-role">Role</label>
+                <select class="hpf-select" id="cf-role" name="role" required>
+                  <option value="" disabled selected>Select...</option>
+                  <option value="founder">Founder</option>
+                  <option value="non-technical-founder">Non-Technical Founder</option>
+                  <option value="c-suite">C-Suite</option>
+                  <option value="team-lead">Team Lead</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="hpf-error">Please select your role.</span>
+              </div>
+            </div>
+
+            <div class="hpf-row">
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-role-custom">If your role is not listed above, please enter it below.</label>
+                <input class="hpf-input" type="text" id="cf-role-custom" name="role_custom" placeholder="My role is..." />
+              </div>
+            </div>
+
+            <div class="hpf-row">
+              <div class="hpf-field" id="hpf-help-field">
+                <label class="hpf-label">How can keuji help?</label>
+                <div class="hpf-radio-grid">
+                  <label class="hpf-radio-label"><input type="radio" name="help_type" value="poc" /> POC Development</label>
+                  <label class="hpf-radio-label"><input type="radio" name="help_type" value="mvp" /> MVP Development</label>
+                  <label class="hpf-radio-label"><input type="radio" name="help_type" value="technical" /> Technical Capabilities</label>
+                  <label class="hpf-radio-label"><input type="radio" name="help_type" value="additional" /> Additional Capabilities</label>
+                  <label class="hpf-radio-label"><input type="radio" name="help_type" value="legacy" /> Legacy Solutions</label>
+                  <label class="hpf-radio-label"><input type="radio" name="help_type" value="other-help" /> Other</label>
+                </div>
+                <span class="hpf-error">Please select an option.</span>
+              </div>
+            </div>
+
+            <div class="hpf-row">
+              <div class="hpf-field">
+                <label class="hpf-label" for="cf-details">Any other details we should know?</label>
+                <textarea class="hpf-textarea" id="cf-details" name="details" placeholder="This MVP is going to help us raise a $1M round." rows="4" required></textarea>
+                <span class="hpf-error">Please share any relevant details.</span>
+              </div>
+            </div>
+
+            <div class="hpf-row">
+              <button type="submit" class="btn">Submit</button>
+            </div>
+
+          </form>
+        </div>
+
       </div>
       <div class="hp-contact__watermark" aria-hidden="true">keuji</div>
     </section>
@@ -523,6 +608,57 @@
         });
       }
       document.querySelectorAll('.hp-gtm__card, .hp-tech__card').forEach(attachGlow);
+    })();
+
+    /* ── Contact form validation ── */
+    (function initContactForm() {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      function mark(field, bad) { field.classList.toggle('is-error', bad); }
+      function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+
+      form.querySelectorAll('.hpf-input, .hpf-select, .hpf-textarea').forEach(function(el) {
+        el.addEventListener('input', function() { el.closest('.hpf-field').classList.remove('is-error'); });
+        el.addEventListener('change', function() { el.closest('.hpf-field').classList.remove('is-error'); });
+      });
+
+      form.querySelectorAll('input[type="radio"]').forEach(function(r) {
+        r.addEventListener('change', function() {
+          document.getElementById('hpf-help-field').classList.remove('is-error');
+        });
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var ok = true;
+
+        var first   = document.getElementById('cf-first');
+        var last    = document.getElementById('cf-last');
+        var email   = document.getElementById('cf-email');
+        var company = document.getElementById('cf-company');
+        var role    = document.getElementById('cf-role');
+        var details = document.getElementById('cf-details');
+        var helpField = document.getElementById('hpf-help-field');
+        var radioChecked = form.querySelectorAll('input[name="help_type"]:checked').length > 0;
+
+        if (!first.value.trim())   { mark(first.closest('.hpf-field'),   true); ok = false; } else mark(first.closest('.hpf-field'),   false);
+        if (!last.value.trim())    { mark(last.closest('.hpf-field'),    true); ok = false; } else mark(last.closest('.hpf-field'),    false);
+        if (!isEmail(email.value)) { mark(email.closest('.hpf-field'),   true); ok = false; } else mark(email.closest('.hpf-field'),   false);
+        if (!company.value.trim()) { mark(company.closest('.hpf-field'), true); ok = false; } else mark(company.closest('.hpf-field'), false);
+        if (!role.value)           { mark(role.closest('.hpf-field'),    true); ok = false; } else mark(role.closest('.hpf-field'),    false);
+        mark(helpField, !radioChecked); if (!radioChecked) ok = false;
+        if (!details.value.trim()) { mark(details.closest('.hpf-field'), true); ok = false; } else mark(details.closest('.hpf-field'), false);
+
+        if (!ok) {
+          var firstErr = form.querySelector('.hpf-field.is-error');
+          if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        var right = form.closest('.hp-contact__right');
+        right.innerHTML = '<div class="hp-contact__success"><p class="hp-contact__success-title">We\'ll be in touch.</p><p class="hp-contact__success-body">Thanks for reaching out — we\'ll respond within one business day.</p></div>';
+      });
     })();
 
     /* ── Count-up for home page stats ── */
