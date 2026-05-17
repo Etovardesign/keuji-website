@@ -174,7 +174,37 @@
 })();
 
 
-/* ── 8. BUTTON GLOW — rainbow trail circles ── */
+/* ── 8. THEME TOGGLE — moon/sun, persisted via localStorage ── */
+(function initThemeToggle() {
+  const STORAGE_KEY = 'keuji-theme';
+  const toggles = document.querySelectorAll('.theme-toggle');
+  if (!toggles.length) return;
+
+  function setTheme(isLight) {
+    document.documentElement.classList.toggle('light-mode', isLight);
+    const label = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+    const mobileLabel = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+    toggles.forEach(btn => {
+      btn.setAttribute('aria-label', label);
+      const textSpan = btn.querySelector('.theme-toggle__label');
+      if (textSpan) textSpan.textContent = mobileLabel;
+    });
+    try { localStorage.setItem(STORAGE_KEY, isLight ? 'light' : 'dark'); } catch (e) {}
+  }
+
+  let saved;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+  setTheme(saved === 'light');
+
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTheme(!document.documentElement.classList.contains('light-mode'));
+    });
+  });
+})();
+
+
+/* ── 9. BUTTON GLOW — rainbow trail circles ── */
 (function initBtnGlow() {
   const THROTTLE_MS = 100;
   const FADE_OUT_MS = 1000;

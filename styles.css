@@ -1298,3 +1298,166 @@ a.banner-card { cursor: pointer; }
   /* Button trail circles — hide on touch */
   .btn-glow-circle { display: none; }
 }
+
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: rgba(255,255,255,0.6);
+  transition: color 200ms ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { color: white; }
+
+.theme-toggle svg { width: 20px; height: 20px; display: block; }
+
+/* Sun icon hidden in dark mode, moon hidden in light mode */
+.theme-icon--sun { display: none; }
+html.light-mode .theme-icon--moon { display: none; }
+html.light-mode .theme-icon--sun  { display: block; }
+
+/* Mobile menu version — full-width row with label */
+.theme-toggle--mobile {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-radius: 0;
+  font-family: var(--font-action);
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+}
+.theme-toggle--mobile:hover { color: white; }
+.theme-toggle--mobile svg { width: 20px; height: 20px; flex-shrink: 0; }
+.theme-toggle__label { flex: 1; text-align: left; }
+
+
+/* ============================================================
+   LIGHT MODE — token + component overrides
+   ============================================================ */
+html.light-mode {
+  --color-black:        #FFFFFF;
+  --color-surface:      #F5F5F5;
+  --color-card:         #EFEFEF;
+  --color-card-hover:   #E5E5E5;
+  --color-border:       #D8D8D8;
+  --color-border-hover: #B8B8B8;
+  --color-tag-bg:       #E5E5E5;
+  --color-tag-border:   #C8C8C8;
+  --color-blue:         #3B5FC4;
+  --color-white:        #0A0A0A;
+  --color-grey:         #C0C0C0;
+
+  background: #F5F5F5;
+}
+
+html.light-mode body {
+  background: linear-gradient(to bottom, #FFFFFF, #F5F5F5);
+  color: #0A0A0A;
+}
+
+/* ── Glow orb ── */
+html.light-mode .glow-orb--cursor {
+  background: radial-gradient(circle, rgba(80,110,220,0.10) 0%, rgba(59,95,196,0.05) 40%, transparent 70%);
+}
+
+/* ── Eyebrow ── */
+html.light-mode .eyebrow         { color: #0A0A0A; }
+html.light-mode .eyebrow--grey   { color: rgba(0,0,0,0.65); }
+
+/* ── Typography ── */
+html.light-mode .body-large { color: rgba(0,0,0,1); }
+html.light-mode .body-small { color: rgba(0,0,0,0.7); }
+html.light-mode .tag        { color: rgba(0,0,0,0.6); }
+
+/* ── Nav ── */
+html.light-mode .nav.scrolled {
+  background: rgba(255,255,255,0.88);
+}
+html.light-mode .nav__link         { color: rgba(0,0,0,0.6); }
+html.light-mode .nav__link:hover   { color: #0A0A0A; }
+html.light-mode .nav__hamburger span { background: #0A0A0A; }
+html.light-mode .theme-toggle      { color: rgba(0,0,0,0.55); }
+html.light-mode .theme-toggle:hover { color: #0A0A0A; }
+
+html.light-mode .nav__mobile-menu {
+  background: rgba(250,250,250,0.98);
+  border-bottom-color: rgba(0,0,0,0.08);
+}
+html.light-mode .nav__mobile-link {
+  color: rgba(0,0,0,0.7);
+  border-bottom-color: rgba(0,0,0,0.07);
+}
+html.light-mode .nav__mobile-link:hover { color: #0A0A0A; }
+html.light-mode .theme-toggle--mobile {
+  color: rgba(0,0,0,0.7);
+  border-bottom-color: rgba(0,0,0,0.07);
+}
+html.light-mode .theme-toggle--mobile:hover { color: #0A0A0A; }
+html.light-mode .theme-toggle--mobile .theme-toggle__label { /* inherits parent color */ }
+
+/* ── Buttons ── */
+html.light-mode .btn {
+  border-color: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.05);
+  color: #0A0A0A;
+}
+html.light-mode .btn::before {
+  box-shadow:
+    inset 0 0 0 1px rgba(59,95,196,0.12),
+    inset 0 0 16px 0 rgba(59,95,196,0.06),
+    inset 0 -3px 12px 0 rgba(59,95,196,0.08),
+    0 1px 3px 0 rgba(0,0,0,0.12),
+    0 4px 12px 0 rgba(0,0,0,0.08);
+}
+
+/* ── Feature cards ── */
+html.light-mode .feature-card {
+  background: linear-gradient(180deg, #F0F0F2 0%, #E8E8EC 100%);
+  border-color: rgba(0,0,0,0.07);
+}
+html.light-mode .feature-card:hover { border-color: rgba(59,95,196,0.2); }
+html.light-mode .feature-card__icon svg  { fill: #0A0A0A; }
+html.light-mode .feature-card__body { color: rgba(0,0,0,0.6); }
+
+/* ── Banner card ── */
+html.light-mode .banner-card {
+  background: #E8EAF8;
+  border-color: rgba(0,0,0,0.07);
+}
+html.light-mode .banner-card:hover { border-color: rgba(59,95,196,0.2); }
+html.light-mode .banner-card__body { color: rgba(0,0,0,0.65); }
+
+/* ── Stats ── */
+html.light-mode .stats__h2 em   { color: var(--color-blue); }
+html.light-mode .stat-item__body { color: rgba(0,0,0,0.55); }
+
+/* ── Capabilities ── */
+html.light-mode .cap-item__body { color: rgba(0,0,0,0.7); }
+
+/* ── We Serve ── */
+html.light-mode .serve-item__icon svg { fill: #0A0A0A; }
+html.light-mode .serve-item__body     { color: rgba(0,0,0,0.7); }
+
+/* ── Final CTA watermark ── */
+html.light-mode .final-cta__watermark {
+  -webkit-text-stroke: 1px rgba(0,0,0,0.07);
+}
+
+/* ── Taggr hero ── */
+html.light-mode .product__eyebrow-arrow       { color: rgba(0,0,0,0.5); }
+html.light-mode .product__eyebrow-arrow .arrow-line { color: rgba(0,0,0,0.4); }
+html.light-mode .hero__body { color: rgba(0,0,0,0.75); }

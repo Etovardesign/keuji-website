@@ -982,3 +982,89 @@
   .hp-gtm__card:hover::after,
   .hp-tech__card:hover::after { opacity: 0; }
 }
+
+
+/* ============================================================
+   LIGHT MODE — homepage-specific overrides
+   ============================================================ */
+
+/* ── Hero ── */
+html.light-mode .hp-hero {
+  background: radial-gradient(ellipse 55% 55% at 30% 65%, rgba(59,95,196,0.07) 0%, transparent 70%);
+}
+html.light-mode .hp-hero__body      { color: rgba(0,0,0,0.6); }
+html.light-mode .hp-hero__logos-label { color: rgba(0,0,0,0.35); }
+
+/* Logo images are white-on-transparent PNGs — invert to black for light bg */
+html.light-mode .hp-logo img { filter: brightness(0); }
+
+/* ── Stats ── */
+html.light-mode .hp-stat__body { color: rgba(0,0,0,0.5); }
+
+/* ── Approach ── */
+html.light-mode .hp-approach__body { color: rgba(0,0,0,0.6); }
+
+/* ── ICP cards ── */
+html.light-mode .hp-icp__icon svg { fill: #0A0A0A; }
+html.light-mode .hp-icp__body     { color: rgba(0,0,0,0.55); }
+
+/* ── GTM cards ── */
+html.light-mode .hp-gtm__body         { color: rgba(0,0,0,0.55); }
+html.light-mode .hp-gtm__card         { border-color: rgba(0,0,0,0.07); }
+html.light-mode .hp-gtm__card:hover   { border-color: rgba(59,95,196,0.2); }
+html.light-mode .hp-gtm__card-icon svg { fill: #0A0A0A; }
+html.light-mode .hp-gtm__card-body    { color: rgba(0,0,0,0.5); }
+
+/* ── Tech capabilities ── */
+html.light-mode .hp-tech__subhead   { color: rgba(0,0,0,0.5); }
+html.light-mode .hp-tech__card {
+  background: #EDEDF2;
+  border-color: rgba(0,0,0,0.08);
+}
+html.light-mode .hp-tech__card:hover { border-color: rgba(59,95,196,0.2); }
+html.light-mode .hp-tech__card-eyebrow { color: rgba(0,0,0,0.4); }
+html.light-mode .hp-tech__card-body    { color: rgba(0,0,0,0.5); }
+html.light-mode .hp-tech__img-card-content {
+  background: linear-gradient(to top, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.45) 55%, transparent 100%);
+}
+
+/* ── Right Expertise ── */
+html.light-mode .hp-cap-item__icon svg { fill: #0A0A0A; }
+html.light-mode .hp-cap-item__label    { color: rgba(0,0,0,0.65); }
+html.light-mode .hp-expertise__body   { color: rgba(0,0,0,0.55); }
+
+/* ── Process ── */
+html.light-mode .hp-process__step-icon svg { fill: #0A0A0A; }
+html.light-mode .hp-process__step-body     { color: rgba(0,0,0,0.5); }
+
+/* ── Why Keuji ── */
+html.light-mode .hp-why__card-icon svg { fill: #0A0A0A; stroke: #0A0A0A; }
+html.light-mode .hp-why__card-title    { color: #0A0A0A; }
+html.light-mode .hp-why__card-body     { color: rgba(0,0,0,0.5); }
+
+/* ── Contact section ── */
+html.light-mode .hp-contact__body      { color: rgba(0,0,0,0.5); }
+html.light-mode .hp-contact__watermark {
+  -webkit-text-stroke: 1px rgba(0,0,0,0.06);
+}
+html.light-mode .hpf-label { color: rgba(0,0,0,0.6); }
+html.light-mode .hpf-input,
+html.light-mode .hpf-select,
+html.light-mode .hpf-textarea {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.1);
+  color: #0A0A0A;
+}
+html.light-mode .hpf-input::placeholder,
+html.light-mode .hpf-textarea::placeholder { color: rgba(0,0,0,0.3); }
+html.light-mode .hpf-input:focus,
+html.light-mode .hpf-select:focus,
+html.light-mode .hpf-textarea:focus {
+  border-color: rgba(59,95,196,0.45);
+  background: rgba(0,0,0,0.06);
+}
+html.light-mode .hpf-select         { color: rgba(0,0,0,0.7); }
+html.light-mode .hpf-select:invalid { color: rgba(0,0,0,0.3); }
+html.light-mode .hpf-select option  { background: #F0F0F0; color: #0A0A0A; }
+html.light-mode .hpf-radio-label    { color: rgba(0,0,0,0.7); }
+html.light-mode .hp-contact__success-body { color: rgba(0,0,0,0.5); }
