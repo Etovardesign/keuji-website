@@ -281,7 +281,7 @@
 
 /* ── GO-TO-MARKET ── */
 .hp-gtm {
-  padding: var(--sp-160) 0;
+  padding: var(--sp-160) 0 200px;
 }
 
 .hp-gtm__header {
@@ -377,7 +377,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--sp-160) var(--content-px);
+  padding: 200px var(--content-px);
 }
 
 .hp-enterprise__inner {
@@ -396,7 +396,7 @@
 
 /* ── TECH CAPABILITIES ── */
 .hp-tech {
-  padding: var(--sp-160) 0;
+  padding: 200px 0 var(--sp-160);
 }
 
 .hp-tech__header {
