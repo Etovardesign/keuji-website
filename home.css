@@ -283,14 +283,14 @@
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0 var(--sp-40);
+  gap: var(--sp-16) var(--sp-40);
 }
 
 .hp-vertical-item {
   display: flex;
   align-items: center;
   gap: var(--sp-16);
-  padding: var(--sp-16) 0;
+  padding: 0;
 }
 
 .hp-vertical-item__icon {
