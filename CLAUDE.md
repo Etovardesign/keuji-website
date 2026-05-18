@@ -234,3 +234,4 @@ Located in `../design-assets/` (sibling to this folder on the Desktop):
 7. **No new JS files.** Extend `main.js` for any new interaction patterns. Use IIFEs to keep scope clean.
 8. **Contact form** uses Web3Forms (`https://api.web3forms.com/submit`). The `access_key` needs the real key from the Web3Forms dashboard before going live.
 9. **Commit to `staging` branch**, then merge/push to trigger any deploy pipeline. Never force-push.
+10. **Git push policy:** Always push ONLY to the `personal` remote (`git push personal staging`). Never push to `origin` (Keuji-Corp client repo) unless the user explicitly asks.
