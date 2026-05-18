@@ -133,48 +133,48 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         3b. TAGGR BANNER
-    ══════════════════════════════════════ -->
-    <div class="banner-section">
-      <a class="banner-card" id="banner-card" href="taggr.html">
-
-        <picture>
-          <source media="(max-width: 767px)" srcset="assets/banner-mobile.png" />
-          <img class="banner-card__bg" src="assets/banner-image.png" alt="" aria-hidden="true" />
-        </picture>
-
-        <div class="banner-card__content">
-          <div class="banner-card__text reveal">
-            <span class="eyebrow banner-card__eyebrow">AI Accounting</span>
-            <h2 class="h2 banner-card__h2">
-              Taggr: Your Firm's<br>
-              Unfair Advantage
-            </h2>
-            <p class="banner-card__body">
-              Taggr, our flagship product, automatically categorizes every transaction by type, class, and account, eliminating manual work and giving every client a faster, cleaner close.
-            </p>
-          </div>
-        </div>
-
-      </a>
-    </div>
-
-    <!-- ══════════════════════════════════════
-         3c. VERTICALS
+         3b. VERTICALS + BANNER (unified)
     ══════════════════════════════════════ -->
     <section class="hp-verticals" id="verticals">
-      <div class="container">
-        <div class="hp-verticals__inner">
 
-          <div class="hp-verticals__left reveal">
-            <span class="eyebrow eyebrow--grey">Vertical Specific</span>
-            <h2 class="h2 hp-verticals__h2">Building AI<br><em>for Your Vertical</em></h2>
-            <p class="hp-verticals__body">Keuji accelerates outdated vertical-specific workflows.</p>
+      <div class="container">
+        <div class="hp-verticals__header reveal">
+          <span class="eyebrow eyebrow--grey">Needs Specific</span>
+          <h2 class="h2 hp-verticals__h2">Building AI <em>for Your Vertical</em></h2>
+          <p class="hp-verticals__body">Keuji accelerates outdated vertical-specific workflows.</p>
+        </div>
+      </div>
+
+      <div class="banner-section">
+        <a class="banner-card" id="banner-card" href="taggr.html">
+
+          <picture>
+            <source media="(max-width: 767px)" srcset="assets/banner-mobile.png" />
+            <img class="banner-card__bg" src="assets/banner-image.png" alt="" aria-hidden="true" />
+          </picture>
+
+          <div class="banner-card__content">
+            <div class="banner-card__text reveal">
+              <span class="eyebrow banner-card__eyebrow">AI Accounting</span>
+              <h2 class="h2 banner-card__h2">
+                Taggr Is Your Firm's<br>
+                Unfair Advantage
+              </h2>
+              <p class="banner-card__body">
+                Taggr, our flagship product, automatically categorizes every transaction by type, class, and account, eliminating manual work and giving every client a faster, cleaner close.
+              </p>
+            </div>
           </div>
 
-          <div class="hp-verticals__list">
+        </a>
+      </div>
 
-            <div class="hp-vertical-item reveal reveal-d1">
+      <div class="container">
+        <div class="hp-verticals__strip reveal">
+          <span class="hp-verticals__strip-label">We Service All Vertical</span>
+          <div class="hp-verticals__grid">
+
+            <div class="hp-vertical-item">
               <div class="hp-vertical-item__icon">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="white">
                   <polygon points="16,2 30,16 16,30 2,16"/>
@@ -183,7 +183,16 @@
               <span class="hp-vertical-item__label">Finance</span>
             </div>
 
-            <div class="hp-vertical-item reveal reveal-d2">
+            <div class="hp-vertical-item">
+              <div class="hp-vertical-item__icon">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="white">
+                  <path d="M16 4 C22 4 28 9 28 17 C28 24 20 29 13 26 C7 24 4 19 4 13 C4 7 10 4 16 4 Z"/>
+                </svg>
+              </div>
+              <span class="hp-vertical-item__label">Marketing</span>
+            </div>
+
+            <div class="hp-vertical-item">
               <div class="hp-vertical-item__icon">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none">
                   <line x1="16" y1="2" x2="16" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
@@ -195,16 +204,7 @@
               <span class="hp-vertical-item__label">Healthcare</span>
             </div>
 
-            <div class="hp-vertical-item reveal reveal-d3">
-              <div class="hp-vertical-item__icon">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="white">
-                  <path d="M16 4 C22 4 28 9 28 17 C28 24 20 29 13 26 C7 24 4 19 4 13 C4 7 10 4 16 4 Z"/>
-                </svg>
-              </div>
-              <span class="hp-vertical-item__label">Marketing</span>
-            </div>
-
-            <div class="hp-vertical-item reveal reveal-d4">
+            <div class="hp-vertical-item">
               <div class="hp-vertical-item__icon">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none">
                   <path d="M6 4 L6 26 L28 26" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -217,6 +217,7 @@
           </div>
         </div>
       </div>
+
     </section>
 
     <!-- ══════════════════════════════════════
