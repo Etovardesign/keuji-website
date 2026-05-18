@@ -262,57 +262,62 @@
   padding-bottom: 0;
 }
 
-/* Horizontal strip below the banner card */
+/* Verticals strip below the banner card — label above, 2×2 grid below */
 .hp-verticals__strip {
-  display: flex;
-  align-items: flex-start;
   padding-top: var(--sp-64);
-  gap: var(--sp-64);
 }
 
 .hp-verticals__strip-label {
-  flex: 0 0 260px;
+  display: block;
   font-family: var(--font-eyebrow);
   font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
+  margin-bottom: var(--sp-48);
 }
 
 .hp-verticals__grid {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-16) var(--sp-40);
+  gap: var(--sp-64) var(--sp-80);
 }
 
 .hp-vertical-item {
   display: flex;
-  align-items: center;
-  gap: var(--sp-16);
-  padding: 0;
+  gap: var(--sp-24);
+  align-items: flex-start;
 }
 
 .hp-vertical-item__icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2px;
 }
 
 .hp-vertical-item__icon svg {
   width: 28px;
   height: 28px;
+  fill: white;
 }
 
-.hp-vertical-item__label {
-  font-family: var(--font-eyebrow);
-  font-size: 20px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.hp-vertical-item__title {
+  font-family: var(--font-action);
+  font-size: 18px;
+  font-weight: 700;
   color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.hp-vertical-item__body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
 }
 
 
@@ -1042,9 +1047,7 @@
   /* Verticals */
   .hp-verticals__h2 { font-size: 40px; }
   .hp-vertical-item__label { font-size: 18px; }
-  .hp-verticals__strip { flex-direction: column; align-items: flex-start; gap: var(--sp-32); }
-  .hp-verticals__strip-label { flex: none; }
-  .hp-verticals__grid { width: 100%; grid-template-columns: 1fr; }
+  .hp-verticals__grid { grid-template-columns: 1fr; gap: var(--sp-48); }
 
   /* Stats */
   .hp-stats__grid { grid-template-columns: 1fr; text-align: left; }

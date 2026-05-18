@@ -820,6 +820,17 @@ a.banner-card { cursor: pointer; }
   color: rgba(255,255,255,0.65);
 }
 
+.banner-card__link {
+  display: inline-block;
+  margin-top: var(--sp-24);
+  color: var(--color-blue);
+  font-family: var(--font-action);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.banner-card__link:hover { text-decoration: underline; }
+
 /* ============================================================
    CAPABILITIES
    ============================================================ */
