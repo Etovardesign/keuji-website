@@ -1097,7 +1097,15 @@
   .hp-tech__card--voice { grid-column: auto; grid-row: auto; }
   .hp-tech__card--agentic .hp-tech__card-text,
   .hp-tech__card--voice .hp-tech__card-text { padding: var(--sp-32); }
-  .hp-tech__card--mcp { display: flex; flex-direction: column; }
+  .hp-tech__card--mcp {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    background-image: url('assets/tech-bg-tall.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   .hp-tech__card--mcp .hp-tech__card-text { padding: var(--sp-32); position: relative; z-index: 1; }
   .hp-tech__card-title { font-size: 32px; }
   .hp-tech__h2 { font-size: 40px; }
