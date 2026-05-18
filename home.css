@@ -520,6 +520,9 @@
   flex-direction: column;
   grid-column: 2 / 4;
   grid-row: 1;
+  background-image: url('assets/tech-bg-agentic.png');
+  background-size: cover;
+  background-position: center;
 }
 .hp-tech__card--agentic .hp-tech__card-text {
   flex: 1;
@@ -542,6 +545,9 @@
   flex-direction: column;
   grid-column: 2 / 4;
   grid-row: 2;
+  background-image: url('assets/tech-bg-voice.png');
+  background-size: cover;
+  background-position: center;
 }
 .hp-tech__card--voice .hp-tech__card-text {
   flex: 1;
