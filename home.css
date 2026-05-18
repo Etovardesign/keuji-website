@@ -553,7 +553,11 @@
   font-size: 16px;
   color: rgba(255,255,255,0.5);
   line-height: 1.6;
-  max-width: 360px;
+}
+
+.hp-tech__card--agentic .hp-tech__card-body,
+.hp-tech__card--voice .hp-tech__card-body {
+  max-width: 480px;
 }
 
 
