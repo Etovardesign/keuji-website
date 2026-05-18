@@ -752,8 +752,7 @@ h2, .h2 {
   overflow: hidden;
   background: #0a0a12;
   border: 1px solid rgba(255,255,255,0.07);
-  display: flex;
-  flex-direction: row;
+  display: block;
   min-height: 480px;
   --gx: 50%;
   --gy: 50%;
@@ -777,16 +776,15 @@ div.banner-card { cursor: default; }
 .banner-card:hover { border-color: rgba(153,174,239,0.2); }
 .banner-card:hover::after { opacity: 1; }
 
+/* Full-bleed background image */
 .banner-card__image {
-  flex: 0 0 55%;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  position: relative;
 }
 
 .banner-card__image picture {
   display: block;
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
 }
@@ -799,16 +797,19 @@ div.banner-card { cursor: default; }
   object-position: center;
 }
 
+/* Text overlaid on the right half */
 .banner-card__content {
-  flex: 1;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   padding: var(--sp-64);
   z-index: 1;
 }
 
 .banner-card__text {
-  width: 100%;
+  width: 45%;
 }
 
 .banner-card__eyebrow {
@@ -1121,11 +1122,8 @@ div.banner-card { cursor: default; }
   }
 
   /* ── Banner ── */
-  .banner-card__image {
-    flex: 0 0 52%;
-  }
-  .banner-card__content {
-    padding: var(--sp-48);
+  .banner-card__text {
+    width: 52%;
   }
 
   /* ── Capabilities ── */
@@ -1218,22 +1216,26 @@ div.banner-card { cursor: default; }
 
   /* ── Banner ── */
   .banner-card {
+    display: flex;
     flex-direction: column;
     min-height: 0;
   }
   .banner-card__image {
-    flex: 0 0 auto;
+    position: relative;
+    inset: auto;
     width: 100%;
     aspect-ratio: 4 / 3;
+    flex-shrink: 0;
   }
-  .banner-card__bg {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  .banner-card__image picture {
+    position: absolute;
+    inset: 0;
   }
   .banner-card__content {
+    position: relative;
+    inset: auto;
+    justify-content: flex-start;
     padding: var(--sp-40) var(--sp-32);
-    align-items: flex-start;
   }
   .banner-card__text {
     width: 100%;
