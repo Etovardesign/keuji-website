@@ -75,7 +75,7 @@
   --max-w-screenshot: 1080px;
   --max-w-cap-table: 1120px;
   --max-w-cap-copy:  480px;
-  --nav-h: 64px;
+  --nav-h: 80px;
   --nav-px: 80px;
   --content-px: 80px;
 }
@@ -332,7 +332,7 @@ h2, .h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--nav-px);
+  padding: 8px var(--nav-px);
   background: transparent;
   transition: background 400ms ease, backdrop-filter 400ms ease;
 }
