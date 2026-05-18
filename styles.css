@@ -760,6 +760,7 @@ h2, .h2 {
 }
 
 a.banner-card { cursor: pointer; text-decoration: none; }
+div.banner-card { cursor: default; }
 
 .banner-card::after {
   content: '';
@@ -829,24 +830,30 @@ a.banner-card { cursor: pointer; text-decoration: none; }
 
 .banner-card__ctas {
   display: flex;
-  gap: var(--sp-32);
+  gap: var(--sp-40);
   align-items: center;
   margin-top: var(--sp-32);
 }
 
 .banner-card__link-learn {
   font-family: var(--font-action);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
-  color: var(--color-white);
+  color: #A7A7A7;
+  text-decoration: none;
 }
+
+.banner-card__link-learn:hover { color: var(--color-white); }
 
 .banner-card__link {
   font-family: var(--font-action);
   font-size: 16px;
   font-weight: 700;
   color: var(--color-blue);
+  text-decoration: none;
 }
+
+.banner-card__link:hover { text-decoration: underline; }
 
 /* ============================================================
    CAPABILITIES
