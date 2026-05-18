@@ -468,7 +468,12 @@
   grid-row: 1 / 3;
 }
 .hp-tech__img-card img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .hp-tech__img-card-content {
   position: absolute;
@@ -523,6 +528,7 @@
   background-image: url('assets/tech-bg-agentic.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .hp-tech__card--agentic .hp-tech__card-text {
   flex: 1;
@@ -548,6 +554,7 @@
   background-image: url('assets/tech-bg-voice.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .hp-tech__card--voice .hp-tech__card-text {
   flex: 1;
