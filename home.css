@@ -38,7 +38,7 @@
   font-size: 18px;
   line-height: 1.65;
   color: rgba(255,255,255,0.6);
-  max-width: 440px;
+  max-width: 400px;
 }
 
 .hp-hero__logos {
@@ -173,6 +173,7 @@
   line-height: 1.7;
   color: rgba(255,255,255,0.6);
   align-self: flex-end;
+  max-width: 400px;
 }
 
 /* ICP cards */
