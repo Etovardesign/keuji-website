@@ -1187,7 +1187,7 @@ a.banner-card { cursor: pointer; }
   .banner-card__content {
     padding: var(--sp-40) var(--sp-32);
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
   }
   .banner-card__text {
     width: 100%;
