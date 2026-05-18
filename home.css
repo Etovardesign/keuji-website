@@ -845,9 +845,15 @@
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
+  line-height: 1.5;
   padding: 12px 16px;
   width: 100%;
+  box-sizing: border-box;
   transition: border-color 200ms ease, background 200ms ease;
+}
+
+.hpf-input {
+  height: 46px;
 }
 
 .hpf-input::placeholder,
@@ -862,8 +868,15 @@
 }
 
 .hpf-select {
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
   color: rgba(255,255,255,0.7);
+  height: 46px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
 }
 .hpf-select:invalid { color: rgba(255,255,255,0.28); }
 .hpf-select option { background: #1a1a1a; color: white; }
