@@ -459,6 +459,27 @@
   line-height: 1.65;
 }
 
+/* Tech card entrance animation — triggered when grid enters viewport */
+.hp-tech__img-card,
+.hp-tech__card--agentic,
+.hp-tech__card--voice {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.hp-tech__grid.cards-visible .hp-tech__img-card {
+  animation: fadeUp 600ms ease forwards;
+  animation-delay: 100ms;
+}
+.hp-tech__grid.cards-visible .hp-tech__card--agentic {
+  animation: fadeUp 600ms ease forwards;
+  animation-delay: 220ms;
+}
+.hp-tech__grid.cards-visible .hp-tech__card--voice {
+  animation: fadeUp 600ms ease forwards;
+  animation-delay: 360ms;
+}
+
 /* 3-column grid: left 1/3 tall + right 2/3 with 2 stacked cards */
 .hp-tech__grid {
   display: grid;

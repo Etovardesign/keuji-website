@@ -174,7 +174,26 @@
 })();
 
 
-/* ── 8. BUTTON GLOW — rainbow trail circles ── */
+/* ── 8. TECH CARDS — fadeUp on scroll into view ── */
+(function initTechCardAnimation() {
+  const grid = document.querySelector('.hp-tech__grid');
+  if (!grid) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        grid.classList.add('cards-visible');
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.12 }
+  );
+
+  observer.observe(grid);
+})();
+
+
+/* ── 9. BUTTON GLOW — rainbow trail circles ── */
 (function initBtnGlow() {
   const THROTTLE_MS = 100;
   const FADE_OUT_MS = 1000;
