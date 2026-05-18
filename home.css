@@ -251,6 +251,9 @@
   line-height: 1.65;
   color: rgba(255,255,255,0.6);
   margin-top: var(--sp-24);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Banner card sits inside the unified section — section handles vertical rhythm */
