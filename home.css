@@ -262,7 +262,7 @@
 /* Horizontal strip below the banner card */
 .hp-verticals__strip {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding-top: var(--sp-64);
   gap: var(--sp-64);
 }
@@ -1041,7 +1041,7 @@
   .hp-vertical-item__label { font-size: 18px; }
   .hp-verticals__strip { flex-direction: column; align-items: flex-start; gap: var(--sp-32); }
   .hp-verticals__strip-label { flex: none; }
-  .hp-verticals__grid { width: 100%; }
+  .hp-verticals__grid { width: 100%; grid-template-columns: 1fr; }
 
   /* Stats */
   .hp-stats__grid { grid-template-columns: 1fr; text-align: left; }
