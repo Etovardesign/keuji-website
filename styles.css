@@ -1219,6 +1219,7 @@ div.banner-card { cursor: default; }
     display: flex;
     flex-direction: column;
     min-height: 0;
+    background: #1B1B1B;
   }
   .banner-card__image {
     position: relative;
