@@ -1346,3 +1346,14 @@ div.banner-card { cursor: default; }
   /* Button trail circles — hide on touch */
   .btn-glow-circle { display: none; }
 }
+
+/* ── Site Footer ── */
+.site-footer {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.site-footer__copy {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
