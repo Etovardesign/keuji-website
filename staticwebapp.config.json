@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "route": "/taggr.html",
+      "redirect": "/accounting",
+      "statusCode": 301
+    },
+    {
+      "route": "/accounting",
+      "rewrite": "/taggr.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "/fonts/*", "*.css", "*.js", "*.png", "*.jpg", "*.svg", "*.ico"]
+  }
+}
