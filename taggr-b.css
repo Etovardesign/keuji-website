@@ -206,6 +206,12 @@
   bottom: 0; right: 80px;
   background: rgba(93,122,82,.22);
 }
+.tb-glow--hero-r {
+  width: 560px; height: 560px;
+  top: -120px; right: -80px;
+  background: rgba(93,122,82,.38);
+  filter: blur(120px);
+}
 
 /* ── Section base ── */
 .tb-section {
