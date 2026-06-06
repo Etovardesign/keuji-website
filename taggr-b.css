@@ -289,6 +289,22 @@
   text-transform: uppercase;
   color: var(--tb-dark);
 }
+.tb-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.tb-nav__link {
+  font-family: var(--tb-font-btn);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--tb-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+.tb-nav__link:hover { opacity: 1; }
 
 /* ── Hero ── */
 .tb-hero {
@@ -885,6 +901,8 @@
 @media (max-width: 991px) {
   .tb-container { padding-inline: 16px; }
   .tb-nav__inner { padding-inline: 16px; }
+  .tb-nav__links { gap: 24px; }
+  .tb-nav__link { font-size: 14px; }
 
   .tb-h1 { font-size: 52px; }
   .tb-h2 { font-size: 40px; }
@@ -936,6 +954,7 @@
 @media (max-width: 767px) {
   .tb-container { padding-inline: 16px; }
   .tb-nav__inner { padding-inline: 16px; }
+  .tb-nav__link { display: none; }
 
   .tb-h1 { font-size: 40px; }
   .tb-h2 { font-size: 32px; }

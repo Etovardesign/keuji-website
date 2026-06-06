@@ -19,7 +19,11 @@
         <span class="tb-logo-wordmark">Taggr</span>
         <span class="tb-logo-sub">BY KEUJI</span>
       </a>
-      <a href="#" class="tb-btn tb-btn--primary" data-open-modal>Get Early Access →</a>
+      <div class="tb-nav__links">
+        <a href="https://www.keuji.com/accounting" class="tb-nav__link">Custom Solutions</a>
+        <a href="#review" class="tb-nav__link" data-smooth-scroll>Platform</a>
+        <a href="#" class="tb-btn tb-btn--primary" data-open-modal>Get Early Access →</a>
+      </div>
     </div>
   </nav>
 
@@ -557,6 +561,16 @@
         metricsObserver.observe(metricsEl);
       }
     })();
+
+    // Smooth scroll for nav anchors
+    document.querySelectorAll('[data-smooth-scroll]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
     // Early access modal
     (function () {
