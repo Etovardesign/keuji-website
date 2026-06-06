@@ -152,9 +152,9 @@
   white-space: nowrap;
   border: none;
   text-decoration: none;
-  transition: opacity .15s, transform .15s;
+  transition: filter .15s, transform .15s;
 }
-.tb-btn:hover { opacity: .88; transform: translateY(-1px); }
+.tb-btn:hover { filter: brightness(.85); transform: translateY(-1px); }
 
 /* Primary: dark green gradient, light cream text */
 .tb-btn--primary {
@@ -1010,5 +1010,5 @@
 }
 
 @media (hover: none) {
-  .tb-btn:hover { opacity: 1; transform: none; }
+  .tb-btn:hover { filter: none; transform: none; }
 }
