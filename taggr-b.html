@@ -450,10 +450,10 @@
       var heroInnerEl = document.querySelector('.tb-hero__inner');
       if (heroInnerEl) setTimeout(function () { heroInnerEl.classList.add('in-view'); }, 80);
 
-      // Hero image parallax: image starts 160px covered by cost section, scrolls up 30% faster
+      // Hero image parallax: disabled on mobile (≤767px) to avoid jank
       var heroEl = document.querySelector('.tb-hero');
       var heroImgEl = document.querySelector('.tb-hero__image');
-      if (heroEl && heroImgEl) {
+      if (heroEl && heroImgEl && window.matchMedia('(min-width: 768px)').matches) {
         window.addEventListener('scroll', function () {
           var scrollY = window.scrollY;
           var limit = heroEl.offsetHeight + 200;

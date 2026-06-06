@@ -894,7 +894,8 @@
   .tb-hero__inner { max-width: 100%; }
 
   .tb-section--dark  { min-height: auto; display: block; padding-block: 120px; }
-  .tb-section--beyond { padding-block: 120px; }
+  .tb-section--beyond { padding-top: 120px; padding-bottom: 140px; }
+  .tb-glow--hero-r { width: 360px; height: 360px; top: -80px; right: -40px; }
 
   #review { margin-top: 120px; }
   #intelligence { padding-top: 120px; }
@@ -974,7 +975,8 @@
   .tb-privacy-features { flex-direction: column; gap: 24px; }
 
   .tb-beyond-content { max-width: 100%; gap: 32px; }
-  .tb-section--beyond { padding-block: 80px; }
+  .tb-section--beyond { padding-top: 80px; padding-bottom: 120px; }
+  .tb-glow--hero-r { width: 280px; height: 280px; top: -60px; right: -24px; }
 
   .tb-section { padding-block: 72px; }
   .tb-section--dark { min-height: auto; display: block; padding-block: 80px; }
@@ -1006,7 +1008,8 @@
 
   .tb-btn { font-size: 14px; height: 48px; padding: 12px 20px; }
   .tb-section { padding-block: 56px; }
-  .tb-section--beyond { padding-block: 64px; }
+  .tb-section--beyond { padding-top: 64px; padding-bottom: 110px; }
+  .tb-glow--hero-r { width: 200px; height: 200px; top: -40px; right: -16px; }
 }
 
 @media (hover: none) {
