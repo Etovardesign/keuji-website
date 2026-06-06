@@ -220,7 +220,7 @@
   overflow: hidden;
 }
 .tb-section--dark {
-  background: var(--tb-dark);
+  background: var(--tb-dark) url('assets/lines-texture.svg') center/cover no-repeat;
   margin-top: -160px;
   position: relative;
   z-index: 1;
@@ -241,7 +241,7 @@
 #pricing       { display: none; }
 #early-access  { padding-top: 0; }
 .tb-section--beyond {
-  background: var(--tb-dark);
+  background: var(--tb-dark) url('assets/lines-texture.svg') center/cover no-repeat;
   padding-block: 222px;
 }
 
@@ -611,7 +611,7 @@
 /* ── Privacy card ── */
 /* Dark card: 560px fixed height, content top-anchored, statement at bottom */
 .tb-privacy-card {
-  background: #2B3427;
+  background: #2B3427 url('assets/lines-texture.svg') center/cover no-repeat;
   border-radius: 14px;
   padding: 80px 48px 48px;
   height: 560px;
@@ -844,7 +844,7 @@
 
 /* ── Footer ── */
 .tb-footer {
-  background: var(--tb-dark);
+  background: transparent;
   padding-block: 40px;
 }
 .tb-footer__copy {
