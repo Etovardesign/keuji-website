@@ -845,6 +845,10 @@
 /* ── Footer ── */
 .tb-footer {
   background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding-block: 40px;
 }
 .tb-footer__copy {
