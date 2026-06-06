@@ -259,11 +259,9 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 var(--tb-border);
 }
-/* Nav has tighter padding (80px) than content container (160px) */
 .tb-nav__inner {
-  max-width: 1440px;
+  width: 100%;
   padding-inline: 80px;
-  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -900,7 +898,7 @@
 
 @media (max-width: 991px) {
   .tb-container { padding-inline: 16px; }
-  .tb-nav__inner { padding-inline: 16px; }
+  .tb-nav__inner { padding-inline: 48px; }
   .tb-nav__links { gap: 24px; }
   .tb-nav__link { font-size: 14px; }
 
@@ -953,7 +951,7 @@
 
 @media (max-width: 767px) {
   .tb-container { padding-inline: 16px; }
-  .tb-nav__inner { padding-inline: 16px; }
+  .tb-nav__inner { padding-inline: 24px; }
   .tb-nav__link { display: none; }
 
   .tb-h1 { font-size: 40px; }
@@ -1012,6 +1010,7 @@
 @media (max-width: 479px) {
   .tb-container { padding-inline: 16px; }
   .tb-nav__inner { padding-inline: 16px; }
+  .tb-logo-wordmark { font-size: 26px; }
 
   .tb-h1 { font-size: 34px; }
   .tb-h2 { font-size: 28px; }
