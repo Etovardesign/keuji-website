@@ -24,8 +24,18 @@
         <a href="#review" class="tb-nav__link" data-smooth-scroll>Platform</a>
         <a href="#" class="tb-btn tb-btn--primary" data-open-modal>Get Early Access →</a>
       </div>
+      <button class="tb-nav__hamburger" id="tbHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+  <div class="tb-mobile-menu" id="tbMobileMenu" aria-hidden="true">
+    <a href="https://www.keuji.com/accounting" class="tb-mobile-link">Custom Solutions</a>
+    <a href="#review" class="tb-mobile-link" data-smooth-scroll>Platform</a>
+    <a href="#" class="tb-btn tb-btn--primary" data-open-modal>Get Early Access →</a>
+  </div>
 
   <!-- ── Hero ── -->
   <section class="tb-hero">
@@ -689,6 +699,39 @@
           var firstErr = form.querySelector('.tb-modal-error');
           if (firstErr) firstErr.textContent = 'Connection error. Please try again.';
         });
+      });
+    })();
+
+    // ── Hamburger menu ──
+    (function () {
+      var btn  = document.getElementById('tbHamburger');
+      var menu = document.getElementById('tbMobileMenu');
+      if (!btn || !menu) return;
+
+      function open() {
+        menu.classList.add('is-open');
+        btn.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+      }
+      function close() {
+        menu.classList.remove('is-open');
+        btn.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        menu.classList.contains('is-open') ? close() : open();
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', close);
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) close();
       });
     })();
   </script>
