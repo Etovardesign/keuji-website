@@ -160,7 +160,21 @@
 .tb-btn--primary {
   background: linear-gradient(90deg, #3F5938 0%, #2A3326 100%);
   color: #DCDBC8;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
+.tb-btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #2A3326 0%, #3F5938 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: -1;
+}
+.tb-btn--primary:hover { filter: none; }
+.tb-btn--primary:hover::before { opacity: 1; }
 /* Secondary (hero "See How It Works"): cream bg, dark text */
 .tb-btn--secondary {
   background: var(--tb-cream-btn);
