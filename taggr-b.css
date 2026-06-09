@@ -1239,10 +1239,24 @@
   font-weight: 700;
   line-height: 1.5;
   cursor: pointer;
-  transition: filter 0.15s, transform 0.15s;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.15s;
 }
-.tb-modal-submit:hover { filter: brightness(0.88); transform: translateY(-1px); }
-.tb-modal-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; filter: none; }
+.tb-modal-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #2A3326 0%, #3F5938 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: -1;
+}
+.tb-modal-submit:hover { filter: none; transform: translateY(-1px); }
+.tb-modal-submit:hover::before { opacity: 1; }
+.tb-modal-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+.tb-modal-submit:disabled::before { display: none; }
 
 .tb-modal-success[hidden] { display: none; }
 .tb-modal-success {
